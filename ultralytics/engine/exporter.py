@@ -359,18 +359,6 @@ class Exporter:
         data = model.args["data"] if hasattr(model, "args") and isinstance(model.args, dict) else ""
         description = f'Ultralytics {self.pretty_name} model {f"trained on {data}" if data else ""}'
         self.metadata = {
-            "description": description,
-            "author": "Ultralytics",
-            "date": datetime.now().isoformat(),
-            "version": __version__,
-            "license": "AGPL-3.0 License (https://ultralytics.com/license)",
-            "docs": "https://docs.ultralytics.com",
-            "stride": int(max(model.stride)),
-            "task": model.task,
-            "batch": self.args.batch,
-            "imgsz": self.imgsz,
-            "names": model.names,
-            "args": {k: v for k, v in self.args if k in fmt_keys},
         }  # model metadata
         if model.task == "pose":
             self.metadata["kpt_shape"] = model.model[-1].kpt_shape
