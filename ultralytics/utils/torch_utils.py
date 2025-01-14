@@ -572,8 +572,6 @@ def strip_optimizer(f: Union[str, Path] = "best.pt", s: str = "", updates: dict 
     metadata = {
         "date": datetime.now().isoformat(),
         "version": __version__,
-        "license": "AGPL-3.0 License (https://ultralytics.com/license)",
-        "docs": "https://docs.ultralytics.com",
     }
 
     # Update model
