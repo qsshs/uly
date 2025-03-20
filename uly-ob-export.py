@@ -1,7 +1,7 @@
 from ultralytics import YOLO
 
 # Load a model
-model = YOLO("yolov8m.pt")
+model = YOLO("yolo11l.pt")
 
 # Export the model
 model.export(format="onnx", opset = 9, simplify = True)
