@@ -703,7 +703,7 @@ def check_amp(model):
     try:
         from ultralytics import YOLO
 
-        assert amp_allclose(YOLO(model.amp_model_filepath if hasattr(model, "amp_model_filepath") else "yolo11n.pt", task="detect"), im)
+        assert amp_allclose(YOLO(os.amp_model_filepath if hasattr(os, "amp_model_filepath") else "yolo11n.pt", task="detect"), im)
         LOGGER.info(f"{prefix}checks passed ✅")
     except ConnectionError:
         LOGGER.warning(
